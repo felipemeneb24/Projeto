@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const countdownTitle = document.getElementById('countdown-title');
     
     // --- DATA ALVO ---
-    const countdownDate = new Date("June 11, 2025 15:30:50").getTime();
+    const countdownDate = new Date("June 12, 2025 13:00:00").getTime();
 
     // --- FUNÇÕES PRINCIPAIS ---
 
