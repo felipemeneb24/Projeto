@@ -1,0 +1,254 @@
+/* GERAL E VARIÁVEIS DE COR */
+:root {
+    --dark-navy: #0a192f;
+    --gold: #f7d794;
+    --light-slate: #ccd6f6;
+    --slate: #8892b0;
+    --white: #e6f1ff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background-color: var(--dark-navy);
+    color: var(--slate);
+    overflow-x: hidden;
+}
+
+/* FUNDO ESTRELADO ANIMADO (VERSÃO CORRIGIDA EM CSS PURO)
+   O código anterior usava Sass/SCSS, que não funciona diretamente.
+   Esta versão usa valores de box-shadow pré-gerados para criar as estrelas.
+*/
+.stars-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#stars1, #stars2, #stars3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+/* Camada de estrelas pequenas e distantes */
+#stars1 {
+    width: 1px;
+    height: 1px;
+    animation: animStar 150s linear infinite;
+    box-shadow: 
+        1879px 124px #FFF, 1574px 1297px #FFF, 1295px 1017px #FFF, 899px 1303px #FFF, 
+        1404px 1587px #FFF, 1032px 143px #FFF, 1058px 662px #FFF, 1269px 939px #FFF, 
+        889px 1599px #FFF, 730px 1452px #FFF, 110px 1851px #FFF, 1804px 934px #FFF, 
+        1682px 1399px #FFF, 1611px 448px #FFF, 553px 1239px #FFF, 442px 695px #FFF, 
+        1856px 134px #FFF, 1374px 131px #FFF, 128px 1435px #FFF, 1420px 1085px #FFF;
+}
+
+/* Camada de estrelas médias */
+#stars2 {
+    width: 2px;
+    height: 2px;
+    animation: animStar 100s linear infinite;
+    box-shadow: 
+        1557px 1045px #FFF, 1477px 34px #FFF, 831px 1194px #FFF, 516px 1432px #FFF, 
+        1016px 1205px #FFF, 1859px 1557px #FFF, 1532px 1116px #FFF, 532px 410px #FFF, 
+        342px 1301px #FFF, 1387px 1134px #FFF, 1025px 147px #FFF, 145px 343px #FFF, 
+        1793px 80px #FFF, 1586px 816px #FFF, 891px 680px #FFF;
+}
+
+/* Camada de estrelas grandes e próximas */
+#stars3 {
+    width: 3px;
+    height: 3px;
+    animation: animStar 50s linear infinite;
+    box-shadow: 
+        606px 1709px #FFF, 1820px 1594px #FFF, 326px 143px #FFF, 1754px 1033px #FFF, 
+        1012px 283px #FFF, 584px 913px #FFF, 396px 113px #FFF, 130px 1676px #FFF, 
+        1726px 1888px #FFF, 601px 1198px #FFF;
+}
+
+@keyframes animStar {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-2000px); }
+}
+
+/* ESTILO DA TELA DE ABERTURA */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 1.5s ease-out;
+}
+
+.hero-content {
+    animation: fadeInHero 2s ease-in-out;
+}
+
+@keyframes fadeInHero {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.5rem;
+    color: var(--white);
+    margin: 0;
+    text-shadow: 0 0 15px rgba(247, 215, 148, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--gold);
+    margin: 10px 0 40px;
+    letter-spacing: 2px;
+}
+
+.cta-button {
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    background-color: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.cta-button:hover {
+    background-color: var(--gold);
+    color: var(--dark-navy);
+    box-shadow: 0 0 20px var(--gold);
+}
+
+/* ESTRUTURA E ANIMAÇÕES GERAIS */
+.hidden { display: none; }
+main { transition: opacity 1s ease-in; }
+
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--gold);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.panel {
+    background-color: rgba(23, 42, 69, 0.5);
+    border: 1px solid rgba(136, 146, 176, 0.2);
+    border-radius: 15px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); /* Suporte para Safari */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.panel.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* SEÇÃO DA CONTAGEM REGRESSIVA */
+.countdown-section { padding-top: 60px; }
+.countdown { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; text-align: center; }
+.countdown div { min-width: 90px; }
+.countdown span {
+    font-size: 3rem;
+    color: var(--gold);
+    font-weight: bold;
+}
+
+/* LINHA DO TEMPO */
+.message-section .message-content {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.message-content p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--light-slate);
+    margin-bottom: 25px;
+}
+
+.message-content p:last-child {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--gold);
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+/* GALERIA E MODAL */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.gallery-image:hover {
+    transform: scale(1.03);
+    border-color: var(--gold);
+    box-shadow: 0 0 15px rgba(247, 215, 148, 0.4);
+}
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(10, 25, 47, 0.85); justify-content: center; align-items: center; backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); }
+.modal-content { max-width: 85%; max-height: 85%; border-radius: 10px; border: 2px solid var(--gold); animation: zoomIn 0.5s; }
+.close-button { position: absolute; top: 20px; right: 35px; color: var(--white); font-size: 40px; font-weight: bold; cursor: pointer; }
+@keyframes zoomIn { from { transform: scale(0.5); } to { transform: scale(1); } }
+
+/* SEÇÃO DE MÚSICA */
+.music-section { text-align: center; }
+.music-section iframe { margin-top: 20px; max-width: 500px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+
+/* RODAPÉ */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+    color: var(--slate);
+    opacity: 0;
+    transition: opacity 1.5s 1s ease-in;
+}
+footer.visible {
+    opacity: 1;
+}
+footer p:first-child {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--gold);
+}
+
+/* AJUSTE FINO PARA O TÍTULO DA CONTAGEM */
+#countdown-title {
+    margin-bottom: 30px; /* Reduz a margem inferior para aproximar dos números */
+}
+
+/* RESPONSIVIDADE */
+@media screen and (max-width: 768px) {
+    .hero-title { font-size: 3rem; }
+    .panel { padding: 25px; }
+  
+}

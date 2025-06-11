@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa Constelação</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Lato:wght@300;400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="stars-bg">
+        <div id="stars1"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    </div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Escrito nas Estrelas</h1>
+            <p class="hero-subtitle">Para o meu universo particular...</p>
+            <button id="reveal-button" class="cta-button">Descobrir nossa galáxia ✨</button>
+        </div>
+    </header>
+
+    <main id="main-content" class="hidden">
+
+        <section class="countdown-section">
+            <h2 id="countdown-title" class="section-title">Falta pouco...</h2>
+            <div id="countdown" class="countdown">
+                <div><span id="days"></span> Dias</div>
+                <div><span id="hours"></span> Horas</div>
+                <div><span id="minutes"></span> Minutos</div>
+                <div><span id="seconds"></span> Segundos</div>
+            </div>
+        </section>
+
+        <div id="secret-content" class="hidden">
+
+            <section class="message-section panel">
+                <h2 class="section-title">O Que as Estrelas Dizem</h2>
+                <div class="message-content">
+                    <p>Dizem que os maiores eventos do universo começam em silêncio. E foi assim que você chegou. Não
+                        como uma explosão, mas como a luz de uma estrela distante que viaja por eras só para encontrar
+                        um lugar para brilhar.</p>
+                    <p>Com você, aprendi que o amor não é sobre encontrar alguém perfeito, mas sobre encontrar um
+                        universo inteiro em uma única pessoa. Cada sorriso seu é uma nova galáxia que eu quero explorar,
+                        e cada momento ao seu lado é um testemunho de que as coisas mais bonitas da vida não são vistas,
+                        mas sentidas.</p>
+                    <p>Você é a minha constelação favorita.</p>
+                </div>
+            </section>
+
+            <section class="gallery-section panel">
+                <h2 class="section-title">Fragmentos da Nossa Galáxia</h2>
+                <div class="gallery-grid">
+                    <img src="imagens/11.jpg" alt="Descrição da Foto 1" class="gallery-image">
+                    <img src="imagens/10.jpg" alt="Descrição da Foto 2" class="gallery-image">
+                    <img src="imagens/7.jpg" alt="Descrição da Foto 3" class="gallery-image">
+                    <img src="imagens/9.jpg" alt="Descrição da Foto 4" class="gallery-image">
+                    <img src="imagens/8.jpg" alt="Descrição da Foto 5" class="gallery-image">
+                    <img src="imagens/12.jpg" alt="Descrição da Foto 6" class="gallery-image">
+                    <img src="imagens/5.jpg" alt="Descrição da Foto 6" class="gallery-image">
+                    <img src="imagens/6.jpg" alt="Descrição da Foto 6" class="gallery-image">
+                    <img src="imagens/2.jpg" alt="Descrição da Foto 6" class="gallery-image">
+                    <img src="imagens/1.jpg" alt="Descrição da Foto 6" class="gallery-image">
+                    <img src="imagens/4.jpg" alt="Descrição da Foto 6" class="gallery-image">
+                    <img src="imagens/3.jpg" alt="Descrição da Foto 6" class="gallery-image">
+
+                </div>
+            </section>
+
+            <div id="modal" class="modal"><span class="close-button">×</span><img class="modal-content"
+                    id="modal-image"></div>
+
+            <section class="music-section panel">
+                <h2 class="section-title">Nossa Frequência</h2>
+                <p>A trilha sonora que nos conecta.</p>
+                <iframe style="border-radius:12px"
+                    src="https://open.spotify.com/embed/track/0tgVpDi06FyKpA1z0VMD4v?utm_source=generator" width="100%"
+                    height="352" frameBorder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+            </section>
+
+        </div>
+    </main>
+
+    <footer id="footer" class="hidden">
+        <p>Com amor, do seu maior fã.</p>
+        <p>Feliz Dia dos Namorados, meu universo. ❤️</p>
+        <p>Ass: Felipinho Dev😘</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
